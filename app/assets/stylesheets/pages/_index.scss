@@ -1,4 +1,15 @@
 // Import page-specific CSS files here.
+@import "../config/colors";
 @import "home";
 @import "form";
 @import "new";
+
+
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  margin-top: -17px;
+}
