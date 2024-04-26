@@ -15,12 +15,15 @@
   <% @cottages.each do |cottage| %>
     <div class="col-md-4">
       <div class="card">
-        <%= image_tag(cottage.image_url, class: "card-img-top", alt: "Cottage Image") %>
+        
+        <%# <%= image_tag(cottage.image_url, class: "card-img-top", alt: "Experience Image") %>
+
         <div class="card-body">
           <h5 class="card-title"><%= cottage.name %></h5>
           <p class="card-text"><%= cottage.description %></p>
           <h5 class="card-title"><%= cottage.price %></h5>
-          <%= link_to "Learn More", show_cottage_path, class: "btn btn-primary" %>
+          <%= link_to "Learn More", cottage_path(cottage), class: "btn btn-primary" %>
+
         </div>
       </div>
     </div>

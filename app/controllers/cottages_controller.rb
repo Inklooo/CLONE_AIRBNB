@@ -1,6 +1,5 @@
 class CottagesController < ApplicationController
-
-
+  skip_before_action :authenticate_user!, only: [:index, :show]
   def index
     @cottages = Cottage.all
   end
@@ -15,6 +14,7 @@ class CottagesController < ApplicationController
 
   def create
     @cottage = Cottage.new(cottage_params)
+    @cottage.user = current_user
     if @cottage.save
       redirect_to cottages_path
     else
@@ -26,6 +26,6 @@ class CottagesController < ApplicationController
 
 
   def cottage_params
-    params.require(:cottage).permit(:name, :address, :description, :price, :availability, :user_id)
+    params.require(:cottage).permit(:name, :address, :description, :price, :availability)
   end
 end
