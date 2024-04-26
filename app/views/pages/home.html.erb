@@ -6,7 +6,7 @@
     </div>
     <div class="navbar-icons">
       <a href="#">My Reservations</a>
-      <a href="#">Publish an offer</a>
+      <%= link_to "Publish an offer", new_cottage_path%>
       <a href="#">Log in / Log out</a>
     </div>
   </div>
@@ -15,7 +15,7 @@
   </div>
 
   <div class="button">
-    <a href="#">Book a trip Now !</a>
+   <%= link_to "Book a trip Now !", cottages_path%>
   </div>
 
   <div class="footer">

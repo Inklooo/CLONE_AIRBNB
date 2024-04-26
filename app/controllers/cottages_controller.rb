@@ -2,11 +2,12 @@ class CottagesController < ApplicationController
 
   def index
     @cottages = Cottage.all
+  end
 
   def new
     @cottage = Cottage.new
   end
-  
+
   def show
     @cottages = Cottage.find(params[:id])
   end
