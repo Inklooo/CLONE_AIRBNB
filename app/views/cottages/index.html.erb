@@ -11,18 +11,17 @@
   </div>
 </div>
 
-<div class="row">
+
+<div class="card-trip">
   <% @cottages.each do |cottage| %>
-    <div class="col-md-4">
-      <div class="card">
-        <%= image_tag(cottage.image_url, class: "card-img-top", alt: "Cottage Image") %>
-        <div class="card-body">
-          <h5 class="card-title"><%= cottage.name %></h5>
-          <p class="card-text"><%= cottage.description %></p>
-          <h5 class="card-title"><%= cottage.price %></h5>
-          <%= link_to "Learn More", show_cottage_path, class: "btn btn-primary" %>
-        </div>
+    <img src= />
+    <div class="card-trip-infos">
+      <div>
+        <h2><%= cottage.name %></h2>
+        <p><%= cottage.description %></p>
       </div>
+      <h2 class="card-trip-pricing"><%= cottage.price %></h2>
+      <img src= class="card-trip-user avatar-bordered" />
     </div>
   <% end %>
 </div>
