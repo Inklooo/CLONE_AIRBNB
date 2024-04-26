@@ -1,6 +1,11 @@
 class CottagesController < ApplicationController
+
   def new
     @cottage = Cottage.new
+  end
+  
+  def show
+    @cottages = Cottage.find(params[:id])
   end
 
   def create
