@@ -1,5 +1,8 @@
 class CottagesController < ApplicationController
 
+  def index
+    @cottages = Cottage.all
+
   def new
     @cottage = Cottage.new
   end

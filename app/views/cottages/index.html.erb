@@ -1,0 +1,28 @@
+<body>
+<div class="navbar">
+  <div class="navbar-title">
+    <h1>Cottages Rental</h1>
+  </div>
+  <div class="navbar-icons">
+    <a href="#">My Reservations</a>
+    <a href="#">Publish an offer</a>
+    <a href="#">Log in / Log out</a>
+  </div>
+</div>
+
+<div class="row">
+  <% @cottages.each do |cottage| %>
+    <div class="col-md-4">
+      <div class="card">
+        <%= image_tag(experience.image_url, class: "card-img-top", alt: "Experience Image") %>
+        <div class="card-body">
+          <h5 class="card-title"><%= cottage.name %></h5>
+          <p class="card-text"><%= cottage.description %></p>
+          <h5 class="card-title"><%= cottage.price %></h5>
+          <%= link_to "Learn More", cottage_path(cottages/:id), class: "btn btn-primary" %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+</body>
