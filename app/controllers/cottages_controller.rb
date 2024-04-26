@@ -1,5 +1,6 @@
 class CottagesController < ApplicationController
 
+
   def index
     @cottages = Cottage.all
   end
@@ -9,7 +10,7 @@ class CottagesController < ApplicationController
   end
 
   def show
-    @cottages = Cottage.find(params[:id])
+    @cottage = Cottage.find(params[:id])
   end
 
   def create
@@ -22,6 +23,7 @@ class CottagesController < ApplicationController
   end
 
   private
+
 
   def cottage_params
     params.require(:cottage).permit(:name, :address, :description, :price, :availability, :user_id)
