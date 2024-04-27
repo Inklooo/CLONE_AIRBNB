@@ -11,8 +11,8 @@ class CottagesController < ApplicationController
   end
 
   def show
-    @userCottage = @cottage.user_id
-    @currentUser = current_user
+    # @userCottage = @cottage.user_id
+    # @currentUser = current_user
   end
 
   def create

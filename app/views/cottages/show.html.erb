@@ -1,4 +1,4 @@
- <% if @userCottage == @currentUser %>
+ <% if @cottage.user == current_user %>
             <div class="btn-edit">
               <%= link_to "Edit", edit_cottage_path(@cottage)  %>
             </div>
