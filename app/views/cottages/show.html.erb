@@ -1,18 +1,42 @@
-<div>Navbar</div>
+<body>
 
-<div>
-  <div>Cottage's name</div>
-  <button>booking</button>
-</div>
+<div class="container">
 
-<div class="picture">
-  <div>picture of the cottage</div>
-</div>
+  <div class ="banner">
+    <div class="row justify-content-center">
+    <div class="col-md-8 mt-3">
+      <h1 class="title title-show"><%= @cottage.name %></h1>
+          <div class="row justify-content-center">
+            <img class="img-tag" src="https://media-cdn.tripadvisor.com/media/photo-s/1c/18/d7/b1/au-chalet-en-bois-rond.jpg" alt="cottage-img">
+          </div>
 
-<div>
-  <p>description of the cottage</p>
-  <div class="cottage-card">
-    <a href=""></a>
-    <button>booking</button>
+      <div class="row">
+          <div class="col">
+           <div class="description mt-2">
+              <p><%= @cottage.description %></p>
+           </div>
+          </div>
+
+        <div class="col">
+          <div class="row">
+              <h5 class="card-title">
+                <strong>Adress :</strong></h5>
+              <br>
+              <p class="card-text">
+                <%= @cottage.address %></p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+            <p class="price"><strong>PRICE: </strong><%= @cottage.price %></p>
+         </div>
+         <div class="col">
+            <button class="validate-button show-button">Book your trip!</button>
+         </div>
+      </div>
+
   </div>
 </div>
+
+</body>
