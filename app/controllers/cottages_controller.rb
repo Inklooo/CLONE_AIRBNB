@@ -24,7 +24,6 @@ class CottagesController < ApplicationController
 
   private
 
-
   def cottage_params
     params.require(:cottage).permit(:name, :address, :description, :price, :availability)
   end
