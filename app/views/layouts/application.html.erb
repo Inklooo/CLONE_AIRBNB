@@ -13,6 +13,19 @@
   <body>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+    <div class="navbar">
+      <div class="navbar-title">
+        <h1>Cottages Rental</h1>
+      </div>
+      <div class="navbar-icons">
+        <a href="#">My Reservations</a>
+        <%= link_to "Publish an offer", new_cottage_path%>
+        <a href="#">Log in / Log out</a>
+      </div>
+    </div>
     <%= yield %>
+    <div class="footer">
+      <p>&copy; 2024 Cottages Rental. All rights reserved.</p>
+    </div>
   </body>
 </html>
