@@ -1,5 +1,7 @@
 class CottagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
+  before_action :set_cottage, only: [:show, :edit, :update]
+  
   def index
     @cottages = Cottage.all
   end
@@ -9,7 +11,6 @@ class CottagesController < ApplicationController
   end
 
   def show
-    @cottage = Cottage.find(params[:id])
   end
 
   def create
@@ -22,7 +23,22 @@ class CottagesController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    if @cottage.update(cottage_params)
+      redirect_to cottage_path(@cottage)
+    else
+     render :edit, status: :unprocessable_entity
+    end
+  end
+
   private
+
+  def set_cottage
+    @cottage = Cottage.find(params[:id])
+  end
 
   def cottage_params
     params.require(:cottage).permit(:name, :address, :description, :price, :availability)
