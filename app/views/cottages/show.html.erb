@@ -24,7 +24,7 @@
           </div>
           <div class="row price-booking">
             <p class="price text-center"><strong>PRICE :</strong><%= @cottage.price %></p>
-            <button class="validate-button">Book your trip!</button>
+            <button class="validate-button"><%= link_to "Book a trip", new_cottage_booking_path(@cottage) %></button>
           </div>
         </div>
       </div>
