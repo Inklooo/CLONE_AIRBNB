@@ -2,7 +2,11 @@
   <% @cottages.each do |cottage| %>
     <%= link_to cottage_path(cottage) do  %>
       <div class="card-trip" >
-          <img src="https://imgs.search.brave.com/1gv62ReFxALJ4Qz0CY_2bMM3GM0Qvi_WV2y_SackcOo/rs:fit:500:0:0/g:ce/aHR0cHM6Ly93d3cu/bWFpc29uc2V0Y2hh/bGV0c2Fsb3Vlci5j/b20vREFUQS9DSEFM/RVQvMzQxX2F1dG9t/bmVfbGlzdGluZ352/fmNoYWxldC1hLWxv/dWVyLWxlLWNoYWxl/dC1zdXItbGEtbW9u/dGFnbmUuanBn"/>
+          <% if cottage.photos.attached? %>
+              <%= cl_image_tag cottage.photos.first.key, crop: :fill %>
+          <% else %>
+            <%= image_tag "chalet.jpeg" %>
+          <% end %>
           <div class="card-trip-infos">
             <div>
               <h2><%= cottage.name %></h2>

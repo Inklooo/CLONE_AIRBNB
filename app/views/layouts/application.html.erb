@@ -16,7 +16,7 @@
     <div class="navbar">
         <h1><%= link_to "Cottages Rental", root_path%></h1>
       <div class="navbar-icons">
-        <a href="#">My Reservations</a>
+        <%= link_to "My reservations", bookings_path %>
         <%= link_to "Publish an offer", new_cottage_path%>
         <a href="#">Log in / Log out</a>
       </div>
