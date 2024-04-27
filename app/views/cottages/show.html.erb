@@ -1,3 +1,11 @@
+ <% if @userCottage == @currentUser %>
+            <div class="btn-edit">
+              <%= link_to "Edit", edit_cottage_path(@cottage)  %>
+            </div>
+            <div class="btn-delete">
+              <%= link_to link_to "Delete", cottage_path(@cottage), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+            </div>
+        <% end %>
 <body>
   <div class="container">
     <div class="banner">
@@ -45,16 +53,13 @@
             </div>
           </div>
           <div class="row price-booking">
+
             <p class="price text-center"><strong>PRICE :</strong><%= @cottage.price %></p>
             <button class="validate-button"><%= link_to "Book a trip", new_cottage_booking_path(@cottage) %></button>
+
           </div>
         </div>
       </div>
     </div>
   </div>
 </body>
-  <% if @userCottage == @currentUser %>
-    <%= link_to "Edit", edit_cottage_path(@cottage)  %>
-    <%= link_to link_to "Delete", cottage_path(@cottage), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "text-decoration-none text-danger" %>
-  <% end %>
-</div>
