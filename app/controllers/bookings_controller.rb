@@ -3,11 +3,10 @@ class BookingsController < ApplicationController
   before_action :set_booking, only: [:show, :destroy]
 
   def index
-    @bookings = Booking.all
+    @users =User.all
   end
 
   def show
-
   end
 
   def new
@@ -30,7 +29,8 @@ class BookingsController < ApplicationController
   end
 
   def destroy
-
+    @booking.destroy
+    redirect_to bookings_path
   end
 
   private

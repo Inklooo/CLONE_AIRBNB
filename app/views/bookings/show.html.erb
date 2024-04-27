@@ -1,1 +1,13 @@
-<%= @booking.status %>
+name : <%= @booking.cottage.name %>
+<br>
+
+status : <%= @booking.status %>
+
+<br>
+
+start at : <%= @booking.start_date %>
+<br>
+
+end at : <%= @booking.end_date %>
+
+<%= link_to link_to "Delete", booking_path(@booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "text-decoration-none text-danger" %>
