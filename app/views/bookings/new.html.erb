@@ -1,0 +1,6 @@
+<%= simple_form_for(@booking) do |f| %>
+  <%= f.input :start_date %>
+  <%= f.input :end_date %>
+  <%= f.association :cottage %>
+  <%= f.submit "Submit", class: "validate-button form-button" %>
+<% end %>
