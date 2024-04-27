@@ -11,15 +11,20 @@ class BookingsController < ApplicationController
   end
 
   def new
+    @cottage = Cottage.find(params[:cottage_id])
     @booking = Booking.new
   end
 
   def create
+    @cottage = Cottage.find(params[:cottage_id])
+    @user = current_user
     @booking = Booking.new(booking_params)
+    @booking.cottage = @cottage
+    @booking.user = @user
     if @booking.save
       redirect_to bookings_path
     else
-      flash[:alert] = "Data error !"  # Définir le flash ici
+      flash[:alert] = "Data error !"
       render :new
     end
   end
@@ -35,6 +40,6 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:start_date, :end_date, :status)
+    params.require(:booking).permit(:start_date, :end_date)
   end
 end
