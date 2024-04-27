@@ -1,6 +1,7 @@
 // Import page-specific CSS files here.
 @import "../config/colors";
 @import "home";
+@import "show";
 @import "form";
 @import "new";
 @import "indecs";
@@ -21,6 +22,7 @@ body {
   min-height: calc(100vh - 60px);
   padding-top: 90px;
 }
+
 
 a {
   text-decoration: none;

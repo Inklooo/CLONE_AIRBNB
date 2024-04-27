@@ -1,20 +1,36 @@
-<div>Navbar</div>
-
-<div>
-  <div>Cottage's name</div>
-  <button>booking</button>
-</div>
-
-<div class="picture">
-  <div>picture of the cottage</div>
-</div>
-
-<div>
-  <p>description of the cottage</p>
-  <div class="cottage-card">
-    <a href=""></a>
-    <button>booking</button>
+<body>
+  <div class="container">
+    <div class="banner">
+      <div class="row justify-content-center">
+        <div class="col-md-8 mt-3">
+          <h1 class="title"><%= @cottage.name %></h1>
+          <div class="row justify-content-center mb-3">
+            <img class="img-tag" src="https://media-cdn.tripadvisor.com/media/photo-s/1c/18/d7/b1/au-chalet-en-bois-rond.jpg" alt="cottage-img">
+          </div>
+          <div class="row row-text">
+            <div class="col">
+              <div class="info">
+                <div class="description mt-2">
+                  <p class="text-description"><%= @cottage.description %></p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="info">
+                <h5 class="card-title"><strong>Address :</strong></h5>
+                <p class="card-text"><%= @cottage.address %></p>
+              </div>
+            </div>
+          </div>
+          <div class="row price-booking">
+            <p class="price text-center"><strong>PRICE :</strong><%= @cottage.price %></p>
+            <button class="validate-button">Book your trip!</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
+</body>
   <% if @userCottage == @currentUser %>
     <%= link_to "Edit", edit_cottage_path(@cottage)  %>
     <%= link_to link_to "Delete", cottage_path(@cottage), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "text-decoration-none text-danger" %>
