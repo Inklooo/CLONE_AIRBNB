@@ -18,7 +18,21 @@
       <div class="navbar-icons">
         <%= link_to "My reservations", bookings_path %>
         <%= link_to "Publish an offer", new_cottage_path%>
-        <a href="#">Log in / Log out</a>
+        <% if user_signed_in? %>
+          <div class="nav-item dropdown">
+            <% if current_user.photo.attached? %>
+              <%= cl_image_tag current_user.photo.key, crop: :fill, alt: "avatar-bordered", class: "dropdown-toggle avatar-bordered", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <% else %>
+              <%= image_tag "https://kitt.lewagon.com/placeholder/users/sarahlafer", alt: "avatar-bordered", class: "dropdown-toggle avatar-bordered", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <% end %>
+            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <%= link_to "Edit profile", edit_user_registration_path, class: "dropdown-item" %>
+              <%= link_to "Log out",  destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
+            </div>
+          </div>
+        <% else %>
+          <%= link_to "Log in", new_user_session_path%>
+        <% end %>
       </div>
     </div>
     <div class="container-layout">
