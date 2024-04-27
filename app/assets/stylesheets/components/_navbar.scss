@@ -1,3 +1,6 @@
+@import "../config/colors";
+@import "../config/fonts";
+
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
@@ -12,7 +15,7 @@
 }
 
 .navbar {
-  background-color: #6698d2;
+  background-color: $current-blue;
   color: #fff;
   padding: 15px;
   text-align: center;
@@ -20,6 +23,12 @@
 
 .navbar-title {
   font-size: 24px;
+}
+
+.navbar-title h1{
+  font-family: $app-title-font;
+  font-weight: 700;
+  color: $title-yellow;
 }
 
 .navbar-icons {
@@ -30,4 +39,11 @@
   color: #fff;
   text-decoration: none;
   margin-left: 20px;
+  transition: text-shadow 0.3s ease;
+  text-shadow: 0px 0px 0px transparent;
+}
+
+.navbar-icons a:hover {
+  font-weight: 700;
+  text-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2);
 }

@@ -1,0 +1,22 @@
+.validate-button {
+  text-align: center;
+  margin-top: 50px;
+}
+.validate-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: $button-green;
+  color: #fff;
+  text-decoration: none;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  font-size: 18px;
+  transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
+}
+.validate-button:hover  {
+  background-color: $button-green;
+  opacity: 70%;
+  font-weight: 700;
+  transform: scale(1.1);
+  color: rgb(46, 46, 46);
+}
