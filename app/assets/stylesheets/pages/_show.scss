@@ -1,11 +1,21 @@
-@import"/app/assets/stylesheets/components/validateButton";
-@import"/app/assets/stylesheets/components/title";
+.price-booking{
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+  margin-top: 20px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
 
-.title{
-  color: black !important;
+.info{
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+  height: 100%;
+  padding: 10px;
 }
 
 
-.validate-button{
-  margin: 0 !important;
+.row-text{
+  height: 200px;
+}
+
+.price{
+  padding-top: 5px;
 }
