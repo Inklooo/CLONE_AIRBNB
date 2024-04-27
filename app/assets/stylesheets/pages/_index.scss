@@ -1,3 +1,22 @@
 // Import page-specific CSS files here.
+@import "../config/colors";
 @import "home";
+@import "form";
+@import "new";
 
+
+html {
+  box-sizing: border-box;
+  height: 100vh;
+}
+
+body {
+  margin-top: -17px;
+  height: 100vh;
+  padding-bottom: 100px;
+}
+
+.container-layout {
+  min-height: calc(100vh - 60px);
+  padding-top: 90px;
+}
