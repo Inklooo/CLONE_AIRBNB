@@ -11,11 +11,57 @@
   padding: 10px;
 }
 
-
-.row-text{
-  height: 200px;
-}
-
 .price{
   padding-top: 5px;
+}
+
+.btn-delete{
+  margin-left: 20px;
+  position: fixed;
+  margin-top: 50px;
+  background: #FF4742;
+  border: #FF4742;
+  text-align: center;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+  width: 100px;
+  cursor: pointer;
+
+    a {
+  color: white;
+ }
+
+}
+
+.btn-delete:hover{
+background-color: white;
+ a{
+  color: #FF4742;
+}
+}
+
+
+.btn-edit{
+  margin-top: 10px;
+  margin-left: 20px;
+  position: fixed;
+  background-color: #6698d2;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+  text-align: center;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+  width: 100px;
+  cursor: pointer;
+
+  a{
+    color: white;
+  }
+}
+
+.btn-edit:hover{
+  background-color: white;
+
+  a{
+    color: #6698d2;
+  }
 }
