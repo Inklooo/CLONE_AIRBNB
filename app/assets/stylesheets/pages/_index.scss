@@ -3,6 +3,7 @@
 @import "home";
 @import "form";
 @import "new";
+@import "indecs";
 
 
 html {
@@ -19,4 +20,9 @@ body {
 .container-layout {
   min-height: calc(100vh - 60px);
   padding-top: 90px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
 }
