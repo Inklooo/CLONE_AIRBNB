@@ -46,6 +46,22 @@
   grid-gap: 16px;
 }
 
+.description-cottage {
+  width: 220px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.price-container {
+  height: 100px;
+}
+
+.price-container h2 {
+  margin-top: 85px;
+}
+
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
   .cards {

@@ -14,7 +14,7 @@ cottage2.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
 cottage2.save
 cottage3 = Cottage.new(name: "Luxury cottage in British Colombia", address: "2535 Lomond Way, Garibaldi Highlands, BC V0N 1T0, Canada", description: "Visit our beautiful 8 rooms cottages in the amazing mountains of British-Colombia", price: "1200", availability: true)
 cottage3.user = user1
-file = URI.open("https://imgs.search.brave.com/nR6qgswrPdusxgF1rQanii3AMdWrpzlc8IADtTZgEV0/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9zdC5o/emNkbi5jb20vZmlt/Z3MvcGljdHVyZXMv/ZmFjYWRlcy1kZS1t/YWlzb25zL2xlLWNo/YWxldC1yZXZzaXRl/LXBhci1sYS1tYWlz/b24tZGUtY2VkcmUt/bGEtbWFpc29uLWRl/LWNlZHJlLWltZ34x/MzkxM2EzNzBkNmQw/NTRkXzUzOTUtMS1j/ZjU2ZDM3LXczNjAt/aDM2MC1iMC1wMC5q/cGc")
+file = URI.open("https://parcs.canada.ca/voyage-travel/hebergement-accommodation/chalet-cabin//pcweb2.azureedge.net/-/media/WET4/voyage-travel/hebergement-accommodation/chalet-cabin/03CabinGallery06-ONGBI201401800.jpg?modified=20190523133517")
 cottage3.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
 cottage3.save
 

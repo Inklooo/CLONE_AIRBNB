@@ -10,9 +10,11 @@
           <div class="card-trip-infos">
             <div>
               <h2><%= cottage.name %></h2>
-              <p><%= cottage.description %></p>
+              <p class="description-cottage"><%= cottage.description %></p>
             </div>
-            <h2 class="card-trip-pricing"><%= sprintf("%0.02f", cottage.price) %>CA$</h2>
+            <div class="price-container">
+              <h2 class="card-trip-pricing"><%= sprintf("%0.02f", cottage.price) %>CA$</h2>
+            </div>
             <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
           </div>
       </div>
