@@ -19,7 +19,8 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to bookings_path
     else
-      render :new, flash[:alert] = "Data error !"
+      flash[:alert] = "Data error !"  # Définir le flash ici
+      render :new
     end
   end
 
