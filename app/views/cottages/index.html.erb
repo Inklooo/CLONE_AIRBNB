@@ -1,37 +1,14 @@
-<body>
-<div class="navbar">
-  <div class="navbar">
-    <div class="navbar-title">
-      <h1>Cottages Rental</h1>
-    </div>
-    <div class="navbar-icons">
-      <a href="#">My Reservations</a>
-      <%= link_to "Publish an offer", new_cottage_path%>
-      <a href="#">Log in / Log out</a>
-  </div>
-</div>
-
-<div class="row">
+<div class="card-trip">
   <% @cottages.each do |cottage| %>
-    <div class="col-md-4">
-      <div class="card">
-        
-        <%# <%= image_tag(cottage.image_url, class: "card-img-top", alt: "Experience Image") %>
-
-        <div class="card-body">
-          <h5 class="card-title"><%= cottage.name %></h5>
-          <p class="card-text"><%= cottage.description %></p>
-          <h5 class="card-title"><%= cottage.price %></h5>
-          <%= link_to "Learn More", cottage_path(cottage), class: "btn btn-primary" %>
-
-        </div>
+    <img src= />
+    <div class="card-trip-infos">
+      <div>
+        <h2><%= link_to cottage.name, cottage_path(cottage) %></h2>
+        <p><%= cottage.description %></p>
       </div>
+      <h2 class="card-trip-pricing"><%= cottage.price %>CA$</h2>
+      <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
     </div>
+    <%= link_to "Edit", edit_cottage_path(cottage)  %>
   <% end %>
 </div>
-
-<div class="footer">
-    <p>&copy; 2024 Cottages Rental. All rights reserved.</p>
-  </div>
-</body>
-</html>
