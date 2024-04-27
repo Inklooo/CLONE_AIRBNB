@@ -61,6 +61,6 @@ class CottagesController < ApplicationController
   end
 
   def cottage_params
-    params.require(:cottage).permit(:name, :address, :description, :price, :availability)
+    params.require(:cottage).permit(:name, :address, :description, :price, :availability, photos: [])
   end
 end
