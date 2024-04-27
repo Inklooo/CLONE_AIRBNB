@@ -22,16 +22,11 @@
   position: fixed;
   width: 100%;
   top: 0;
-}
-
-.navbar-title {
-  font-size: 24px;
-}
-
-.navbar-title h1{
-  font-family: $app-title-font;
-  font-weight: 700;
-  color: $title-yellow;
+  h1 a{
+    font-family: $app-title-font;
+    font-weight: 700;
+    color: $title-yellow;
+  }
 }
 
 .navbar-icons {
