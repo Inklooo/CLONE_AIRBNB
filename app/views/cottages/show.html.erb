@@ -31,3 +31,8 @@
     </div>
   </div>
 </body>
+  <% if @userCottage == @currentUser %>
+    <%= link_to "Edit", edit_cottage_path(@cottage)  %>
+    <%= link_to link_to "Delete", cottage_path(@cottage), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "text-decoration-none text-danger" %>
+  <% end %>
+</div>

@@ -1,13 +1,17 @@
-<div class="card-trip">
+<div class="cards">
   <% @cottages.each do |cottage| %>
-    <img src= />
-    <div class="card-trip-infos">
-      <div>
-        <h2><%= cottage.name %></h2>
-        <p><%= cottage.description %></p>
+    <%= link_to cottage_path(cottage) do  %>
+      <div class="card-trip" >
+          <img src= />
+          <div class="card-trip-infos">
+            <div>
+              <h2><%= cottage.name %></h2>
+              <p><%= cottage.description %></p>
+            </div>
+            <h2 class="card-trip-pricing"><%= cottage.price %>CA$</h2>
+            <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+          </div>
       </div>
-      <h2 class="card-trip-pricing"><%= cottage.price %></h2>
-      <img src= class="card-trip-user avatar-bordered" />
-    </div>
+    <% end %>
   <% end %>
 </div>
