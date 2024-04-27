@@ -2,13 +2,13 @@
   <% @cottages.each do |cottage| %>
     <%= link_to cottage_path(cottage) do  %>
       <div class="card-trip" >
-          <img src= />
+          <img src="https://imgs.search.brave.com/1gv62ReFxALJ4Qz0CY_2bMM3GM0Qvi_WV2y_SackcOo/rs:fit:500:0:0/g:ce/aHR0cHM6Ly93d3cu/bWFpc29uc2V0Y2hh/bGV0c2Fsb3Vlci5j/b20vREFUQS9DSEFM/RVQvMzQxX2F1dG9t/bmVfbGlzdGluZ352/fmNoYWxldC1hLWxv/dWVyLWxlLWNoYWxl/dC1zdXItbGEtbW9u/dGFnbmUuanBn"/>
           <div class="card-trip-infos">
             <div>
               <h2><%= cottage.name %></h2>
               <p><%= cottage.description %></p>
             </div>
-            <h2 class="card-trip-pricing"><%= cottage.price %>CA$</h2>
+            <h2 class="card-trip-pricing"><%= sprintf("%0.02f", cottage.price) %>CA$</h2>
             <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
           </div>
       </div>
