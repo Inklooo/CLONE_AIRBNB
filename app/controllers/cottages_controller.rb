@@ -1,6 +1,7 @@
 class CottagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_cottage, only: [:show, :edit, :update]
+  
   def index
     @cottages = Cottage.all
   end
