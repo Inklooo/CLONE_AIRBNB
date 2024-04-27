@@ -1,5 +1,5 @@
+<% @cottages.each do |cottage| %>
 <div class="card-trip">
-  <% @cottages.each do |cottage| %>
     <img src= />
     <div class="card-trip-infos">
       <div>
@@ -10,5 +10,5 @@
       <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
     </div>
     <%= link_to "Edit", edit_cottage_path(cottage)  %>
-  <% end %>
 </div>
+<% end %>
