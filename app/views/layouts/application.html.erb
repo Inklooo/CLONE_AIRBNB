@@ -17,7 +17,7 @@
     <div class="navbar">
         <h1><%= link_to "Cottages Rental", root_path%></h1>
       <div class="navbar-icons">
-        <%= link_to "My reservations", bookings_path %>
+        <%= link_to "My reservations", dashboard_path %>
         <%= link_to "Publish an offer", new_cottage_path%>
         <% if user_signed_in? %>
           <div class="nav-item dropdown">
