@@ -1,8 +1,6 @@
-<% @users.each do |user| %>
-  <% user.bookings.each do |booking| %>
-    <ul>
-      <h3><%= link_to booking.cottage.name, booking %></h3>
-      <li>status : <%= booking.status %></li>
-    </ul>
-  <% end %>
+<% @bookings.each do |booking| %>
+  <ul>
+    <h3><%= link_to booking.cottage.name, booking %></h3>
+    <li>status : <%= booking.status %></li>
+  </ul>
 <% end %>
