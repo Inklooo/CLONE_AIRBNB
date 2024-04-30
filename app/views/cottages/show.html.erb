@@ -55,6 +55,7 @@
           <div class="row price-booking">
 
             <p class="price text-center"><strong>PRICE :</strong>   <%=@cottage.price %></p>
+
             <% if @cottage.user != current_user %>
             <button class="validate-button"><%= link_to "Book a trip", new_cottage_booking_path(@cottage) %></button>
             <% end %>
