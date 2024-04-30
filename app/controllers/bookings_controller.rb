@@ -11,7 +11,13 @@ class BookingsController < ApplicationController
 
   def new
     @cottage = Cottage.find(params[:cottage_id])
-    @booking = Booking.new
+
+    if @cottage.user != current_user
+      @booking = Booking.new
+    else
+      flash[:alert] = "You can't book your own cottage"
+      redirect_to '/500.html'
+    end
   end
 
   def create
@@ -20,6 +26,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.cottage = @cottage
     @booking.user = @user
+
     if @booking.save
       redirect_to bookings_path
     else
