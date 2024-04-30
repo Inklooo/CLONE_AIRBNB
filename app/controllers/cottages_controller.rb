@@ -38,7 +38,7 @@ class CottagesController < ApplicationController
       render :edit, status: :unprocessable_entity
       end
     else
-      render :show, flash[:alert] = "Erreur : les données ne peuvent pas être traitées."
+      render :show, flash[:alert] = "Error, data can't be find"
     end
   end
 
@@ -49,7 +49,7 @@ class CottagesController < ApplicationController
       @cottage.destroy
       redirect_to cottages_path
     else
-      render :show, flash[:alert] = "Erreur : les données ne peuvent pas être traitées."
+      render :show, flash[:alert] = "Error, data can't be find"
     end
   end
 
