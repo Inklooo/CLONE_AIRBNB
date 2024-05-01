@@ -8,29 +8,29 @@
   <br>
 
   <div class="dashboard-container">
-
-    <div class="bookings">
+      <div class="col-4 m-5 booking">
           <h2 class="title">Your booking : </h2>
+          <div class="booking-list">
               <% @user_bookings.each do |booking| %>
-              <div class="card">
-                 <ul>
-                     <img class="img" src="chalet.jpeg" alt="cottage-img">
+              <div>
+                 <ul class="card">
+                     <img class="img" src="https://www.arts.gov/sites/default/files/CottageTomMarks.jpeg" alt="cottage-img">
                       <h3 class="title-cottage"><%= link_to booking.cottage.name, booking %></h3>
                       <li class="status">status : <%= booking.status %></li>
+
                   </ul>
               <% end %>
             </div>
+            </div>
         </div>
+      </div>
 
 
-      <div class="dashboard-requests">
+       <div class="col-4 m-5 dashboard-requests">
           <h2 class="title">Your current requests : </h2>
       </div>
       </div>
     </div>
-
-    <div class="dashboard-requests">
-      <h2>Your current requests : </h2>
 
       <% @bookings.each do |booking| %>
         <% @cottages.each do |cottage| %>
