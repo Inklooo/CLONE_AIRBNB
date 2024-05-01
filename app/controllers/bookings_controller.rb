@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_booking, only: [:show, :destroy]
+  before_action :set_booking, only: [:show, :destroy, :edit_accept, :edit_refuse]
 
   def index
     @bookings = current_user.bookings
@@ -44,11 +44,15 @@ class BookingsController < ApplicationController
   end
 
   def edit_accept
-
+    @booking.status= "accepted"
+    @booking.save
+    redirect_to dashboard_path
   end
 
   def edit_refuse
-
+    @booking.status= "refused"
+    @booking.save
+    redirect_to dashboard_path
   end
 
   def destroy
