@@ -7,6 +7,14 @@ class BookingsController < ApplicationController
   end
 
   def show
+    # @cottage = Cottage.find(params[:id])
+    # @bookings = @@cottage.booking
+    # @bookings_dates = @bookings.map do |booking|
+    #   {
+    #     from: booking.start_date,
+    #     to:   booking.end_date
+    #   }
+    # end
   end
 
   def new
@@ -48,5 +56,9 @@ class BookingsController < ApplicationController
 
   def booking_params
     params.require(:booking).permit(:start_date, :end_date)
+  end
+
+  def cottage_params
+    params.require(:cottage).permit(:name, :address, :description, :price, :availability, photos: [])
   end
 end

@@ -1,8 +1,14 @@
-
-<div class="date-form-container">
-  <%= simple_form_for([@cottage, @booking]) do |f| %>
-  <%= f.input :start_date, input_html: { data: {controller: "datepicker"} }, as: :string %>
-  <%= f.input :end_date, input_html: { data: {controller: "datepicker"} }, as: :string %>
-  <%= f.submit "Submit", class: "validate-button form-button" %>
-  <% end %>
-</div>
+<div data-controller="updateprice" class="mt-5">
+  <div class="date-form-container">
+    <%= simple_form_for([@cottage, @booking]) do |f| %>
+    <%= f.input :start_date, input_html: {data: {controller: "datepicker",  updateprice_target: "dateDebut" }}, as: :string %>
+    <%= f.input :end_date, input_html: {data: {controller: "datepicker", updateprice_target: "dateFin", action: "change->updateprice#calculatePrice"}}, as: :string %>
+    <%= f.submit "Submit", class: "validate-button form-button" %>
+    <% end %>
+    <div class="recap-reservation">
+      <p>Prix par nuit : <span data-updateprice-target="prixParJour"><%= @cottage.price%>$</span></p><br>
+      <p>Réservation pour <span data-updateprice-target="differenceJours">0</span> nuits</p><br>
+      <p>Prix total : <span data-updateprice-target="prixTotal">0 $</span></p><br>
+    </div>
+  </div>
+ </div>
