@@ -4,6 +4,13 @@ class CottagesController < ApplicationController
 
   def index
     @cottages = Cottage.all
+    @markers = @cottages.geocoded.map do |cottage|
+      {
+        lat: cottage.latitude,
+        lng: cottage.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: { cottage: cottage })
+      }
+    end
   end
 
   def new
