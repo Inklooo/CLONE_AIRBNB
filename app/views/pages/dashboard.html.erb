@@ -21,6 +21,26 @@
     <div class="dashboard-requests">
       <h2>Your current requests : </h2>
 
+      <% @bookings.each do |booking| %>
+        <% @cottages.each do |cottage| %>
+
+         <% if booking.cottage_id == cottage.id %>
+          <h2><%= cottage.name %></h2>
+          <p><%= cottage.address %></p>
+          <div class="d-flex justify-content-between">
+            <p class="text-success"> start : <%= booking.start_date %></p>
+            <p class= "text-danger"> end : <%= booking.end_date %></p>
+          </div>
+
+          <div class="d-flex justify-content-between">
+            <%= link_to "Accept", accept_booking_path(booking), class: 'accept-button' %>
+            <%= link_to "Refuse", cottages_path, class:'refuse-button'%>
+          </div>
+         <% end %>
+
+        <% end %>
+      <% end %>
+
     </div>
 
   </div>

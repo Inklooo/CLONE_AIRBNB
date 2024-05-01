@@ -28,6 +28,14 @@ class BookingsController < ApplicationController
     end
   end
 
+  def edit_accept
+
+  end
+
+  def edit_refuse
+
+  end
+
   def create
     @cottage = Cottage.find(params[:cottage_id])
     @user = current_user
