@@ -3,7 +3,24 @@
   justify-content: space-between;
 }
 
+
 .card{
   box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
 
+
+.accept-button, .refuse-button {
+  padding: 10px;
+  background-color: $button-green;
+  color: white;
+  transition: transform 0.3s;
+  border-radius: 5px;
+  font-weight: 700;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.refuse-button {
+  background-color: red;
 }
