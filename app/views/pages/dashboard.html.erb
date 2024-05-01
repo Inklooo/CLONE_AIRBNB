@@ -1,7 +1,8 @@
 
 <div class="container">
-
-  <h1 class="text-center mt-4">Dashboard</h1>
+  <div class="title">
+    <h1 class="text-center mt-4">Dashboard</h1>
+  </div>
 
   <br>
   <br>
@@ -9,13 +10,23 @@
   <div class="dashboard-container">
 
     <div class="bookings">
-      <h2>Your booking : </h2>
-        <% @user_bookings.each do |booking| %>
-          <ul>
-            <h3><%= link_to booking.cottage.name, booking %></h3>
-            <li>status : <%= booking.status %></li>
-          </ul>
-        <% end %>
+          <h2 class="title">Your booking : </h2>
+              <% @user_bookings.each do |booking| %>
+              <div class="card">
+                 <ul>
+                     <img class="img" src="chalet.jpeg" alt="cottage-img">
+                      <h3 class="title-cottage"><%= link_to booking.cottage.name, booking %></h3>
+                      <li class="status">status : <%= booking.status %></li>
+                  </ul>
+              <% end %>
+            </div>
+        </div>
+
+
+      <div class="dashboard-requests">
+          <h2 class="title">Your current requests : </h2>
+      </div>
+      </div>
     </div>
 
     <div class="dashboard-requests">
@@ -44,4 +55,5 @@
     </div>
 
   </div>
+
 </div>
