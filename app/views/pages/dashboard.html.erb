@@ -1,0 +1,27 @@
+
+<div class="container">
+
+  <h1 class="text-center mt-4">Dashboard</h1>
+
+  <br>
+  <br>
+
+  <div class="dashboard-container">
+
+    <div class="bookings">
+      <h2>Your booking : </h2>
+        <% @user_bookings.each do |booking| %>
+          <ul>
+            <h3><%= link_to booking.cottage.name, booking %></h3>
+            <li>status : <%= booking.status %></li>
+          </ul>
+        <% end %>
+    </div>
+
+    <div class="dashboard-requests">
+      <h2>Your current requests : </h2>
+
+    </div>
+
+  </div>
+</div>
