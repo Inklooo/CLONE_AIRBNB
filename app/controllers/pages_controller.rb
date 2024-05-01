@@ -5,8 +5,9 @@ class PagesController < ApplicationController
 
   def dashboard
     @user_bookings = current_user.bookings
+    @cottages = Cottage.all
     @user_cottages = current_user.cottages
-    @cottages = current_user.cottages.includes(:bookings)
+    @bookings = Booking.where(cottage_id: @user_cottages.ids)
   end
 
 end

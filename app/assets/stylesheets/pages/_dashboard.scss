@@ -2,3 +2,20 @@
   display: flex;
   justify-content: space-between;
 }
+
+.accept-button, .refuse-button {
+  padding: 10px;
+  background-color: $button-green;
+  color: white;
+  transition: transform 0.3s;
+  border-radius: 5px;
+  font-weight: 700;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.refuse-button {
+  background-color: red;
+}
