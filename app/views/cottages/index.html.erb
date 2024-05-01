@@ -1,28 +1,31 @@
-<div class="cards">
-  <% @cottages.each do |cottage| %>
-    <%= link_to cottage_path(cottage) do  %>
-      <div class="card-trip" >
-          <% if cottage.photos.attached? %>
-              <%= cl_image_tag cottage.photos.first.key, crop: :fill %>
-          <% else %>
-            <%= image_tag "chalet.jpeg" %>
-          <% end %>
-          <div class="card-trip-infos">
-            <div>
-              <h2><%= cottage.name %></h2>
-              <p class="description-cottage"><%= cottage.description %></p>
+<div class="index">
+  <div class="cards">
+    <% @cottages.each do |cottage| %>
+      <%= link_to cottage_path(cottage) do  %>
+        <div class="card-trip" >
+            <% if cottage.photos.attached? %>
+                <%= cl_image_tag cottage.photos.first.key, crop: :fill %>
+            <% else %>
+              <%= image_tag "chalet.jpeg" %>
+            <% end %>
+            <div class="card-trip-infos">
+              <div>
+                <h2><%= cottage.name %></h2>
+                <p class="description-cottage"><%= cottage.description %></p>
+              </div>
+              <div class="price-container">
+                <h2 class="card-trip-pricing"><%= sprintf("%0.02f", cottage.price) %>CA$</h2>
+              </div>
+              <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
             </div>
-            <div class="price-container">
-              <h2 class="card-trip-pricing"><%= sprintf("%0.02f", cottage.price) %>CA$</h2>
-            </div>
-            <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
-          </div>
-      </div>
+        </div>
+      <% end %>
     <% end %>
-  <% end %>
-</div>
-  <div style="width: 100%; height: 600px;"
-  data-controller="map"
-  data-map-markers-value="<%= @markers.to_json %>"
-  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
+  <div style="width: 30%; height: 600px; position: fixed;"
+    class="map"
+    data-controller="map"
+    data-map-markers-value="<%= @markers.to_json %>"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
+</div>
