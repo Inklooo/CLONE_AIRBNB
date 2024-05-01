@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   get 'dashboard', to: 'pages#dashboard', as: 'dashboard'
 
   get 'accept/:id', to: 'bookings#edit_accept', as: 'accept_booking'
+  get 'refuse/:id', to: 'bookings#edit_refuse', as: 'refuse_booking'
+
 
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

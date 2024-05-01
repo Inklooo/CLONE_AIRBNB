@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_booking, only: [:show, :destroy]
+  before_action :set_booking, only: [:show, :destroy, :edit_accept, :edit_refuse]
 
   def index
     @bookings = current_user.bookings
@@ -8,7 +8,7 @@ class BookingsController < ApplicationController
 
   def show
     # @cottage = Cottage.find(params[:id])
-    # @bookings = @@cottage.booking
+    # @bookings = @cottage.booking
     # @bookings_dates = @bookings.map do |booking|
     #   {
     #     from: booking.start_date,
@@ -28,14 +28,6 @@ class BookingsController < ApplicationController
     end
   end
 
-  def edit_accept
-
-  end
-
-  def edit_refuse
-
-  end
-
   def create
     @cottage = Cottage.find(params[:cottage_id])
     @user = current_user
@@ -44,11 +36,23 @@ class BookingsController < ApplicationController
     @booking.user = @user
 
     if @booking.save
-      redirect_to bookings_path
+      redirect_to dashboard_path
     else
       flash[:alert] = "Data error !"
       render :new
     end
+  end
+
+  def edit_accept
+    @booking.status= "accepted"
+    @booking.save
+    redirect_to dashboard_path
+  end
+
+  def edit_refuse
+    @booking.status= "refused"
+    @booking.save
+    redirect_to dashboard_path
   end
 
   def destroy
