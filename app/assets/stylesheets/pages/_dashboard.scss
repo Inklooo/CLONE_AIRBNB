@@ -3,10 +3,45 @@
   justify-content: space-between;
 }
 
+.title{
+  margin-bottom: 10px;
+  font-size: 25px;
+}
 
 .card{
-  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  padding: 10px;
+
+  &:hover {
+    transform: scale(1.1);
+    transition: 500ms linear;
+  }
 }
+
+.booking-list .card {
+  margin-bottom: 40px;
+}
+
+
+.img{
+  padding: 5px;
+}
+
+.title-cottage{
+  font-size: 20px;
+  text-align: center;
+  text-shadow: 0px 1px 1px ;
+}
+
+.status{
+  text-align: center;
+}
+
+li::marker {
+  color: red;
+  font-weight: bold;
+}
+
 
 .accept-button, .refuse-button {
   padding: 10px;
