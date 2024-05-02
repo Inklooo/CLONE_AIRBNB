@@ -34,7 +34,7 @@
       <% @bookings.each do |booking| %>
         <% @cottages.each do |cottage| %>
 
-         <% if booking.cottage_id == cottage.id && booking.status == "prending" %>
+         <% if booking.cottage_id == cottage.id && booking.status == "Pending" %>
           <h2><%= cottage.name %></h2>
           <p><%= cottage.address %></p>
           <div class="d-flex justify-content-between">
