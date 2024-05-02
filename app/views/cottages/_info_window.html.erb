@@ -1,2 +1,5 @@
-<h2><%= cottage.name %></h2>
-<p><%= cottage.address %></p>
+<%= link_to cottage_path(cottage) do %>
+  <h2 class= cottage_name><%= cottage.name %></h2>
+  <p><%= cottage.address %></p>
+  <p class= cottage_price><%= sprintf("%0.02f", cottage.price) %>CA$</p>
+<% end %>
