@@ -38,8 +38,7 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to dashboard_path
     else
-      flash[:alert] = "Data error !"
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
