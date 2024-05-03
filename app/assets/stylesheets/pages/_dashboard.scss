@@ -16,14 +16,32 @@ h1{
 .card{
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   padding: 10px;
-
-
+  margin-bottom: 20px;
+  text-align: center;
 
   &:hover {
     transform: scale(1.1);
     transition: 500ms linear;
   }
 }
+
+.booking-info {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  width: 45%;
+  margin-left: 28%;
+
+  .text-status{
+    color: #6698d2;
+  }
+
+}
+
+
+.address{
+  text-align: center;
+  justify-content: center;
+}
+
 
 .booking-list .card {
   margin-bottom: 40px;
