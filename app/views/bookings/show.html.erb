@@ -1,13 +1,65 @@
-name : <%= @booking.cottage.name %>
-<br>
-
-status : <%= @booking.status %>
-
-<br>
-
-start at : <%= @booking.start_date %>
-<br>
-
-end at : <%= @booking.end_date %>
-
-<%= link_to link_to "Delete", booking_path(@booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "text-decoration-none text-danger" %>
+<body>
+  <div class="container">
+    <div class="banner">
+        <div class="btn-delete">
+            <%= link_to link_to "Delete the reservation", booking_path(@booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "text-decoration-none" %>
+        </div>
+      <div class="row justify-content-center">
+        <div class="col-md-8 mt-3">
+          <h1 class="title"><%= @booking.cottage.name %></h1>
+          <div class="row justify-content-center mb-3">
+            <% if @booking.cottage.photos.attached? %>
+              <div id="carouselExample" class="carousel slide">
+                <div class="carousel-inner">
+                  <% i = 1%>
+                  <% @booking.cottage.photos.each do |photo| %>
+                    <div class="carousel-item <%= i == 1 ? "active" : ""%>">
+                      <%= cl_image_tag photo.key, crop: :fill, class: "img_caroussel"%>
+                    </div>
+                    <%  i += 1%>
+                  <% end %>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+            <% else %>
+              <%= image_tag "chalet.jpeg" %>
+            <% end %>
+          </div>
+          <div class="row row-text">
+            <div class="col">
+              <div class="info">
+                <div class="description mt-2">
+                  <h5 class="card-title"><strong>Description :</strong></h5>
+                  <p class="text-description"><%= @booking.cottage.description %></p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="info">
+                <h5 class="card-title"><strong>Address :</strong></h5>
+                <p class="card-text"><%= @booking.cottage.address %></p>
+              </div>
+            </div>
+            <div class="col">
+              <div class="info">
+                <div class="description mt-2">
+                  <h5 class="card-title"><strong>Informations :</strong></h5>
+                  <p class="text-description">Status : <%= @booking.status %></p>
+                  <p class="text-description">Start Date : <%= @booking.start_date %></p>
+                  <p class="text-description">End Date: <%= @booking.end_date %></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
