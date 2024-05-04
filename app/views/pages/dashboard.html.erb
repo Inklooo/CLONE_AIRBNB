@@ -22,12 +22,12 @@
     <div class="col-4 m-5 current-request">
       <h2 class="title">Your current requests:</h2>
       <% @bookings.each do |booking| %>
-        <% @cottages.each do |cottage| %>
-          <% if booking.cottage_id == cottage.id && booking.status == "Pending" %>
+
+          <% if booking.status == "Pending" %>
             <div class="card">
               <%= cl_image_tag booking.cottage.photos.first.key, crop: :fill, class: "img" %>
-              <h2 class="title-cottage"><%= cottage.name %></h2>
-              <p class="address"><%= cottage.address %></p>
+              <h2 class="title-cottage"><%= booking.cottage.name %></h2>
+              <p class="address"><%= booking.cottage.address %></p>
               <div class="booking-info justify-content-center">
                 <p class="text-status">Start: <%= booking.start_date %></p>
                 <p class="text-status">End: <%= booking.end_date %></p>
@@ -37,8 +37,31 @@
                 <%= link_to "Refuse", refuse_booking_path(booking), class: 'refuse-button' %>
               </div>
             </div>
-          <% end %>
+
         <% end %>
+      <% end %>
+    </div>
+
+    <h2 class="title">Your history</h2>
+
+
+    <div class="history">
+
+      <% @bookings.each do |booking| %>
+          <% if booking.status != "Pending" %>
+            <div class="card card-history">
+
+              <%= cl_image_tag booking.cottage.photos.first.key, crop: :fill, class: "img" %>
+              <h2 class="title-cottage"><%= booking.cottage.name %></h2>
+
+              <% if booking.status == "refused" %>
+                <p class="text-danger">status : <%= booking.status %></p>
+              <% else %>
+                <p class="text-success">status : <%= booking.status %></p>
+              <% end %>
+
+            </div>
+          <% end %>
       <% end %>
     </div>
   </div>

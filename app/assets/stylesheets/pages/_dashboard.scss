@@ -40,7 +40,6 @@ h1{
   }
 }
 
-
 .address{
   text-align: center;
   justify-content: center;
@@ -95,4 +94,26 @@ li {
 
 .refuse-button {
   background-color: red;
+}
+
+.history {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 30px;
+}
+
+.card-history{
+  height: 250px;
+
+  &:hover {
+    transform: none;
+  }
+
+  img {
+    height: 150px;
+  }
+}
+
+.booking-info-history {
+  height: 20px;
 }
