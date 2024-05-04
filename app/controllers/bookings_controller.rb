@@ -7,14 +7,7 @@ class BookingsController < ApplicationController
   end
 
   def show
-    # @cottage = Cottage.find(params[:id])
-    # @bookings = @cottage.booking
-    # @bookings_dates = @bookings.map do |booking|
-    #   {
-    #     from: booking.start_date,
-    #     to:   booking.end_date
-    #   }
-    # end
+
   end
 
   def new
@@ -22,6 +15,7 @@ class BookingsController < ApplicationController
 
     if @cottage.user != current_user
       @booking = Booking.new
+
     else
       flash[:alert] = "You can't book your own cottage"
       redirect_to '/500.html'
