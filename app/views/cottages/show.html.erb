@@ -1,68 +1,75 @@
- <% if @cottage.user == current_user %>
+
+  <div class="container">
+
+          <% if @cottage.user == current_user %>
             <div class="btn-edit">
               <%= link_to "Edit", edit_cottage_path(@cottage)  %>
             </div>
             <div class="btn-delete">
               <%= link_to link_to "Delete", cottage_path(@cottage), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
             </div>
-        <% end %>
-<body>
-  <div class="container">
-    <div class="banner">
-      <div class="row justify-content-center">
-        <div class="col-md-8 mt-3">
-          <h1 class="title"><%= @cottage.name %></h1>
-          <div class="row justify-content-center mb-3">
-            <% if @cottage.photos.attached? %>
-              <div id="carouselExample" class="carousel slide">
-                <div class="carousel-inner">
-                  <% i = 1%>
-                  <% @cottage.photos.each do |photo| %>
-                    <div class="carousel-item <%= i == 1 ? "active" : ""%>">
-                      <%= cl_image_tag photo.key, crop: :fill, class: "img_caroussel"%>
-                    </div>
-                    <%  i += 1%>
-                  <% end %>
+          <% end %>
+
+
+
+      <div class="banner">
+        <div class="row justify-content-center">
+          <div class="col-md-8 mt-3">
+            <h1 class="title"><%= @cottage.name %></h1>
+            <div class="row justify-content-center mb-3">
+              <% if @cottage.photos.attached? %>
+                <div id="carouselExample" class="carousel slide">
+                  <div class="carousel-inner">
+                    <% i = 1%>
+                    <% @cottage.photos.each do |photo| %>
+                      <div class="carousel-item <%= i == 1 ? "active" : ""%>">
+                        <%= cl_image_tag photo.key, crop: :fill, class: "img_caroussel"%>
+                      </div>
+                      <%  i += 1%>
+                    <% end %>
+                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                  </button>
+                  </div>
+
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Next</span>
-                </button>
-              </div>
-            <% else %>
-              <%= image_tag "chalet.jpeg" %>
-            <% end %>
-          </div>
-          <div class="row row-text">
-            <div class="col">
-              <div class="info">
-                <div class="description mt-2">
-                  <p class="text-description"><%= @cottage.description %></p>
-                </div>
+              <% else %>
+                <%= image_tag "chalet.jpeg" %>
+              <% end %>
+
+          <div class="row">
+             <div class="col info mt-2">
+                <h6 class="card-title"><strong>Description :</strong></h6>
+                <br>
+                    <%= @cottage.description %>
+                    <br>
+                    <br>
+                    <h6 class="card-title"><strong>Address :</strong></h6>
+                    <br>
+                  <div class="row info-price">
+                    <p class="col card-text"><%= @cottage.address %></p>
+                    <p class="col-auto price"><strong>PRICE :</strong>   <%=@cottage.price %></p>
+                  </div>
               </div>
             </div>
-            <div class="col">
-              <div class="info">
-                <h5 class="card-title"><strong>Address :</strong></h5>
-                <p class="card-text"><%= @cottage.address %></p>
-              </div>
+           <div class="row price-booking">
+             <% if @cottage.user != current_user %>
+                <%= link_to 'Book a trip', new_cottage_booking_path(@cottage), class: "validate-button" %>
+             <% end %>
+
             </div>
-          </div>
-          <div class="row price-booking">
 
-            <p class="price text-center"><strong>PRICE :</strong>   <%=@cottage.price %></p>
 
-            <% if @cottage.user != current_user %>
-              <%= link_to 'Book a trip', new_cottage_booking_path(@cottage), class: "validate-button" %>
-            <% end %>
+
+            </div>
 
           </div>
-        </div>
-      </div>
-    </div>
-  </div>
+       </div>
+     </div>
+   </div>
 </body>
