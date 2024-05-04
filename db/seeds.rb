@@ -28,7 +28,7 @@ cottage4.user = user2
 file = URI.open("https://imgs.search.brave.com/6DE0XDgmVRFI_vO3l6G7-kOxBsrA9Me2WpKey4xx2zY/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/cGhvdG9zLXByZW1p/dW0vcGhvdG9ncmFw/aGllLWR1LWNoYWxl/dC1wYXlzYWdlXzU5/OTg2Mi0yMjAwNC5q/cGc_c2l6ZT02MjYm/ZXh0PWpwZw")
 cottage4.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
 cottage4.save
-cottage5 = Cottage.new(name: "Tiny house - Lac-Beauport", address: "24 Chemin du Domaine, Lac-Beauport, QC G3B 1L3, Canada", description: "Un endroit de rêve unique à 20 min de la ville de Québec. Le Hygge fait partie du projet Le Maelström et est situé sur la montagne du Mont-Tourbillon dans la municipalité de Lac-Beauport. C’est l’endroit idéal pour se changer les idées, se ressourcer la fin de semaine.", price: "559", availability: true)
+cottage5 = Cottage.new(name: "Tiny house - Lac-Beauport", address: "24 Chemin du Domaine, Beaumont, QC G0R 1C0", description: "Un endroit de rêve unique à 20 min de la ville de Québec. Le Hygge fait partie du projet Le Maelström et est situé sur la montagne du Mont-Tourbillon dans la municipalité de Lac-Beauport. C’est l’endroit idéal pour se changer les idées, se ressourcer la fin de semaine.", price: "559", availability: true)
 cottage5.user = user2
 file = URI.open("https://imgs.search.brave.com/lPVSkHf_nQZRfquopd08twEv1B04jayTYyGwpfvNtJc/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/cGhvdG9zLXByZW1p/dW0vcGhvdG8tY2Fi/YW5lLW1vbnRhZ25l/Xzc3ODc4MC00ODA4/OS5qcGc_c2l6ZT02/MjYmZXh0PWpwZw")
 cottage5.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
