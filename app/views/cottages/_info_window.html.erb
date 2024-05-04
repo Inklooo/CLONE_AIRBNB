@@ -1,5 +1,5 @@
 <%= link_to cottage_path(cottage) do %>
+  <%= cl_image_tag cottage.photos.first.key, class: "image_map" %>
   <h2 class= cottage_name_map><%= cottage.name %></h2>
-  <p><%= cottage.address %></p>
-  <p class= cottage_price_map><%= sprintf("%0.02f", cottage.price) %>CA$</p>
+  <p class= cottage_price_map><%= sprintf("%0.02f", cottage.price) %>CAD / night</p>
 <% end %>
