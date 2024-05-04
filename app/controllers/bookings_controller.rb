@@ -31,7 +31,14 @@ class BookingsController < ApplicationController
   def create
     @cottage = Cottage.find(params[:cottage_id])
     @user = current_user
-    @booking = Booking.new(booking_params)
+    @booking = Booking.new(booking_params.except(:date_range))
+
+    if booking_params[:date_range].present?
+      start_date, end_date = booking_params[:date_range].split(" to ")
+      @booking.start_date = start_date
+      @booking.end_date = end_date
+    end
+
     @booking.cottage = @cottage
     @booking.user = @user
 
@@ -66,7 +73,7 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:start_date, :end_date)
+    params.require(:booking).permit(:date_range)
   end
 
   def cottage_params
