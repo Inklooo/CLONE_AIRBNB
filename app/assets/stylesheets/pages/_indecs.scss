@@ -35,9 +35,11 @@
 
 .card-trip-infos .card-trip-user {
   position: absolute;
+  object-fit: cover;
   right: 16px;
   top: -20px;
-  width: 40px;
+  width: 45px;
+  height: 45px;
 }
 
 .cards {

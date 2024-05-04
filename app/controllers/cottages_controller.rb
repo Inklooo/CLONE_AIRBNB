@@ -12,7 +12,8 @@ class CottagesController < ApplicationController
       {
         lat: cottage.latitude,
         lng: cottage.longitude,
-        info_window_html: render_to_string(partial: "info_window", locals: { cottage: cottage })
+        info_window_html: render_to_string(partial: "info_window", locals: { cottage: cottage }),
+        marker_html: render_to_string(partial: "marker")
       }
     end
   end

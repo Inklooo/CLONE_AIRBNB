@@ -28,7 +28,11 @@
               <div class="price-container">
                 <h2 class="card-trip-pricing"><%= sprintf("%0.02f", cottage.price) %>CA$</h2>
               </div>
-              <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+              <% if cottage.user.photo.attached? %>
+                <%= cl_image_tag cottage.user.photo.key, crop: :fill, alt: "avatar-bordered", class: "card-trip-user avatar-bordered" %>
+              <% else %>
+               <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+              <% end %>
             </div>
         </div>
       <% end %>
