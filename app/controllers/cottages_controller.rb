@@ -3,7 +3,11 @@ class CottagesController < ApplicationController
   before_action :set_cottage, only: [:show, :edit, :update, :destroy]
 
   def index
-    @cottages = Cottage.all
+    if params[:query].present?
+      @cottages = Cottage.search_by_name_address_and_description(params[:query])
+    else
+      @cottages = Cottage.all
+    end
     @markers = @cottages.geocoded.map do |cottage|
       {
         lat: cottage.latitude,
