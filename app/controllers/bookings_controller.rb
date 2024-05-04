@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_booking, only: [:show, :destroy, :edit_accept, :edit_refuse]
+  before_action :set_booking, only: [:show, :destroy, :edit_accept, :edit_refuse, :edit, :update]
 
   def index
     @bookings = current_user.bookings
@@ -46,6 +46,23 @@ class BookingsController < ApplicationController
       redirect_to dashboard_path
     else
       render :new, status: :unprocessable_entity
+    end
+  end
+
+  def edit
+  end
+
+  def update
+
+    if booking_params[:date_range].present?
+      start_date, end_date = booking_params[:date_range].split(" to ")
+      @booking.start_date = start_date
+      @booking.end_date = end_date
+      if @booking.save
+        redirect_to dashboard_path
+      else
+        render :edit, status: :unprocessable_entity
+      end
     end
   end
 
