@@ -2,6 +2,8 @@ require "open-uri"
 User.destroy_all
 
 user1 = User.create(email: "damien@gmail.com", password: "123456")
+file = URI.open("https://i.pinimg.com/originals/c3/78/03/c37803cb28336822e75380551210e10a.jpg")
+user1.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 cottage1 = Cottage.new(name: "Brand new cottage in Montérégie", address: "5483 Rang de Fort-Georges, Sainte-Angèle-de-Monnoir, QC J0L 1P0, Canada", description: "Beautiful brand new cottage in Montérégie with 7 rooms", price: "199", availability: true)
 cottage1.user = user1
 file = URI.open("https://imgs.search.brave.com/devytdvNuTTG7ifDM8xGvUPO8bMPyPqogyiWb9Q2ubg/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9zdC5k/ZXBvc2l0cGhvdG9z/LmNvbS8yODYzMDQ5/LzM4NzYvaS80NTAv/ZGVwb3NpdHBob3Rv/c18zODc2NDkzMS1z/dG9jay1waG90by13/aW50ZXItc2tpLWNo/YWxldC1hbmQtY2Fi/aW4uanBn")
@@ -12,13 +14,15 @@ cottage2.user = user1
 file = URI.open("https://imgs.search.brave.com/ef3ijeuRU_CPShI_eP26p-wHaKGFldKuPcjK1LPES4A/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/cGhvdG9zLXByZW1p/dW0vY2FiYW5lLWhp/dmVyLWNvbmZvcnRh/YmxlLWRhbnMtYm9p/c18xOTgwNjctMTIx/NjkuanBnP3NpemU9/NjI2JmV4dD1qcGc")
 cottage2.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
 cottage2.save
-cottage3 = Cottage.new(name: "Luxury cottage in British Colombia", address: "2535 Lomond Way, Garibaldi Highlands, BC V0N 1T0, Canada", description: "Visit our beautiful 8 rooms cottages in the amazing mountains of British-Colombia", price: "1200", availability: true)
+cottage3 = Cottage.new(name: "Luxury cottage in Mont-Orford", address: "5 Rue des Floralies, Austin, QC J0B 1B0, Canada", description: "Visit our beautiful 8 rooms cottages in the amazing mountains of Québec", price: "1200", availability: true)
 cottage3.user = user1
 file = URI.open("https://parcs.canada.ca/voyage-travel/hebergement-accommodation/chalet-cabin//pcweb2.azureedge.net/-/media/WET4/voyage-travel/hebergement-accommodation/chalet-cabin/03CabinGallery06-ONGBI201401800.jpg?modified=20190523133517")
 cottage3.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
 cottage3.save
 
 user2 = User.create(email: "cariboudelest@gmail.com", password: "123456")
+file = URI.open("https://tse1.mm.bing.net/th?id=OIP.HRxIKAx41QLKBpy_saQ3DQHaLH&pid=Api&P=0&h=180")
+user2.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 cottage4 = Cottage.new(name: "Chalet en forêt | Sauna & foyer", address: "17 Chemin Bob, Austin, QC J0B 1B0, Canada", description: "Situé dans une foret au sein même du village de Austin (Cantons-de-l'Est) à 1h30 de Montréal, Chalet Crème est un chalet au design épuré, avec une jolie vue sur la nature environnante grâce à ses nombreuses fenêtres XL.", price: "260", availability: true)
 cottage4.user = user2
 file = URI.open("https://imgs.search.brave.com/6DE0XDgmVRFI_vO3l6G7-kOxBsrA9Me2WpKey4xx2zY/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/cGhvdG9zLXByZW1p/dW0vcGhvdG9ncmFw/aGllLWR1LWNoYWxl/dC1wYXlzYWdlXzU5/OTg2Mi0yMjAwNC5q/cGc_c2l6ZT02MjYm/ZXh0PWpwZw")
