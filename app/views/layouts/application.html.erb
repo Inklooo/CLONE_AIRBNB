@@ -36,6 +36,9 @@
         <% end %>
       </div>
     </div>
+    <% if params[:controller] == "cottages" && params[:action] == "index" %>
+    <%= render "cottages/search_bar" %>
+    <% end %>
     <div class="container-layout">
       <%= yield %>
     </div>
