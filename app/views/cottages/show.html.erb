@@ -53,13 +53,13 @@
                     <br>
                   <div class="row info-price">
                     <p class="col card-text"><%= @cottage.address %></p>
-                    <p class="col-auto price"><strong>PRICE :</strong>   <%=@cottage.price %></p>
+                    <p class="col-auto price"><strong><%= sprintf("%0.02f", @cottage.price) %> /CAD</p></strong>
                   </div>
               </div>
             </div>
            <div class="row price-booking">
              <% if @cottage.user != current_user %>
-                <button type="button" class="validate-button" data-bs-toggle="modal" data-bs-target="#exampleModal">Book a trip</button>
+                <button type="button" class="validate-button" data-bs-toggle="modal" data-bs-target="#exampleModal">Book a trip now !</button>
              <% end %>
 
             </div>
