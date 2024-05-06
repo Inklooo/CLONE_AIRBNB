@@ -1,24 +1,12 @@
 
   <div class="container">
 
-          <% if @cottage.user == current_user %>
-            <div class="btn-edit">
-              <%= link_to "Edit", edit_cottage_path(@cottage)  %>
-            </div>
-            <div class="btn-delete">
-              <%= link_to link_to "Delete", cottage_path(@cottage), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-            </div>
-          <% end %>
-
-
-
       <div class="banner">
         <div class="row justify-content-center">
-          <div class="col-md-8 mt-3">
+          <div class="row md-8 mt-3">
             <h1 class="title"><%= @cottage.name %></h1>
-            <div class="row justify-content-center mb-3">
               <% if @cottage.photos.attached? %>
-                <div id="carouselExample" class="carousel slide">
+                <div id="carouselExample" class="col-md-6 carousel slide">
                   <div class="carousel-inner">
                     <% i = 1%>
                     <% @cottage.photos.each do |photo| %>
@@ -41,28 +29,44 @@
               <% else %>
                 <%= image_tag "chalet.jpeg" %>
               <% end %>
+        <div class="col all-descritpion">
 
-          <div class="row">
-             <div class="col info mt-2">
-                <h6 class="card-title"><strong>Description :</strong></h6>
-                <br>
+
+              <div class="row info">
+                <div class="description">
+                  <h6 class="card-title"><strong>Description :</strong></h6>
+                    <br>
                     <%= @cottage.description %>
                     <br>
                     <br>
+
                     <h6 class="card-title"><strong>Address :</strong></h6>
                     <br>
-                  <div class="row info-price">
+                    <div class="row info-price">
                     <p class="col card-text"><%= @cottage.address %></p>
                     <p class="col-auto price"><strong><%= sprintf("%0.02f", @cottage.price) %> /CAD</p></strong>
-                  </div>
-              </div>
-            </div>
-           <div class="row price-booking">
-             <% if @cottage.user != current_user %>
-                <button type="button" class="validate-button" data-bs-toggle="modal" data-bs-target="#exampleModal">Book a trip now !</button>
-             <% end %>
+                 </div>
+               </div>
 
-            </div>
+                    <div class="row m-auto button-booking ">
+                        <% if @cottage.user != current_user %>
+                          <button type="button" class="validate-button" data-bs-toggle="modal" data-bs-target="#exampleModal">Book a trip now !</button>
+                        <% end %>
+
+
+                      <% if @cottage.user == current_user %>
+                        <div class="btn-edit">
+                          <%= link_to "Edit", edit_cottage_path(@cottage)  %>
+                        </div>
+                        <div class="btn-delete">
+                          <%= link_to link_to "Delete", cottage_path(@cottage), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+                        </div>
+                      <% end %>
+                  </div>
+                </div>
+          </div>
+
+
 
               <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog">

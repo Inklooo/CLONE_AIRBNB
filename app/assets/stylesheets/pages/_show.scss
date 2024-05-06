@@ -3,10 +3,13 @@
   padding: 10px;
   font-size: 14px;
   color: $current-nature;
+  height: 100%;
+
 }
 
+
 .price{
-  padding-top: 5px;
+  color: black;
 }
 
 .btn-delete{
@@ -66,10 +69,10 @@ background-color: white;
   object-fit: cover;
 }
 
-.carousel{
-width: 50%;
+.button-booking{
+  width: 95%;
 }
 
-.price{
-  color: black;
+.description{
+  margin-bottom: 20px;
 }
