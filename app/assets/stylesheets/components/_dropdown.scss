@@ -1,8 +1,8 @@
 .dropdown-menu{
-
  .dropdown-item{
   color: $current-nature;
   margin-left: 0;
-
+  position: relative;
+  z-index: 2;
 }
 }

@@ -21,8 +21,10 @@ body {
 }
 
 .container-layout {
-  min-height: calc(100vh - 60px);
-  padding-top: 75px;
+  display: flex;
+  align-items: center;
+  min-height: calc(100vh - 50px);
+  padding-top: 90px;
 }
 
 

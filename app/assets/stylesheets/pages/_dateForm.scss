@@ -25,7 +25,7 @@
 .recap-reservation {
   border: 1px solid #ccc;
   border-radius: 5px;
-  background-color: $current-blue;
+  background-color: $current-nature;
   margin: 20px;
   padding: 30px;
   display: flex;
@@ -41,6 +41,10 @@
     margin: 0;
     line-height: 1.5;
     color: $title-yellow;
+  }
+
+  span {
+    color: white !important;
   }
 
   strong {
