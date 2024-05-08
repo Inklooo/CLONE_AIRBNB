@@ -2,10 +2,10 @@
   <div class="container">
     <div class="banner">
         <div class="btn-edit">
-            <%= link_to "Edit", edit_booking_path(@booking)  %>
+            <%= link_to "Edit your cottage", edit_booking_path(@booking)  %>
         </div>
         <div class="btn-delete">
-            <%= link_to link_to "Delete the reservation", booking_path(@booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "text-decoration-none" %>
+            <%= link_to link_to "Cancel the reservation", booking_path(@booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "text-decoration-none" %>
         </div>
       <div class="row justify-content-center">
         <div class="col-md-8 mt-3">
