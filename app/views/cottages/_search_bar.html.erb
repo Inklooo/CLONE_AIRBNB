@@ -3,10 +3,10 @@
     <%= form_with url: cottages_path, method: :get, class: "d-flex" do %>
       <%= text_field_tag :query,
             params[:query],
-            class: "form-control",
+            class: "form-control search_bar_form",
             placeholder: "Type a keyword"
         %>
-      <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
+      <%= submit_tag "Search", name: "", class: "validate-button button-search" %>
     <% end %>
   </div>
 </div>

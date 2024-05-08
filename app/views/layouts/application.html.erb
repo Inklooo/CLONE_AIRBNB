@@ -11,10 +11,12 @@
     <%= javascript_importmap_tags %>
   </head>
 
+
   <body class="<%="body-background" unless params[:controller] == "pages" && params[:action] == "home" %>">
 
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+
     <div class="navbar">
         <h1><%= link_to "Cottages Rental", root_path%></h1>
       <div class="navbar-icons">

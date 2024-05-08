@@ -1,7 +1,12 @@
 .search_bar {
   position: fixed;
   top: 8%;
-  width: 100%;
-  z-index: 1;
+  width: 55%;
   opacity: 0.8;
+  z-index: 1;
+  border-radius: 30%;
+  .search_bar_form {
+    border-bottom-left-radius: 16px;
+    border-top-left-radius: 16px;
+  }
 }

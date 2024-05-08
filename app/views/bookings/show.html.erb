@@ -1,9 +1,14 @@
 <body>
   <div class="container">
     <div class="banner">
-
-
-        <div class="col md-8 mt-3">
+        <div class="btn-edit">
+            <%= link_to "Edit your cottage", edit_booking_path(@booking)  %>
+        </div>
+        <div class="btn-delete">
+            <%= link_to link_to "Cancel the reservation", booking_path(@booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "text-decoration-none" %>
+        </div>
+      <div class="row justify-content-center">
+        <div class="col-md-8 mt-3">
           <h1 class="title"><%= @booking.cottage.name %></h1>
             <div class="row justify-content-center mb-3">
               <% if @booking.cottage.photos.attached? %>
@@ -29,8 +34,6 @@
                   <% end %>
                 </div>
               </div>
-
-
               <div class="col all-description">
                 <div class="row m-auto info">
                   <div class="description">
@@ -42,7 +45,15 @@
                       <p class="card-text"><%= @booking.cottage.address %></p>
                       <h5 class="card-title"><strong>Informations :</strong></h5>
                      <br>
-                      <p class="col text-description"><strong>Status : </strong><%= @booking.status %></p>
+                  <% if @booking.status != "Pending" %>
+                    <% if @booking.status == "refused" %>
+                    <p class="text-danger col text-description"><strong>Status : <%= @booking.status %></p>
+                    <% else %>
+                    <p class="text-success col text-description"><strong>Status : <%= @booking.status %></p>
+                    <% end %>
+                  <% else %>
+                  <p class="text-danger col text-description"><strong>Status : <%= @booking.status %></p>
+                  <% end %>
                     <div class="col date">
                         <p class="text-description"><strong>Start Date : </strong><%= @booking.start_date %></p>
                         <p class="text-description"><strong>End Date: </strong><%= @booking.end_date %></p>
