@@ -11,7 +11,8 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
+  <body class="<%="body-background" unless params[:controller] == "pages" && params[:action] == "home" %>">
+
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <div class="navbar">

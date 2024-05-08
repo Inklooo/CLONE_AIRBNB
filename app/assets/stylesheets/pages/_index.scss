@@ -20,6 +20,26 @@ body {
   padding-bottom: 100px;
 }
 
+.body-background{
+ position: relative;
+ width: 100%;
+ height: 100vh;
+}
+
+.body-background::before{
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('https://static.vecteezy.com/ti/photos-gratuite/t1/26365937-magnifique-flou-vert-la-nature-contexte-ai-genere-photo.jpg');
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+  opacity: 30%;
+}
+
 .container-layout {
   display: flex;
   align-items: center;
