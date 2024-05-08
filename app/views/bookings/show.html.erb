@@ -1,9 +1,14 @@
 <body>
   <div class="container">
     <div class="banner">
-
-
-        <div class="col md-8 mt-3">
+        <div class="btn-edit">
+            <%= link_to "Edit your cottage", edit_booking_path(@booking)  %>
+        </div>
+        <div class="btn-delete">
+            <%= link_to link_to "Cancel the reservation", booking_path(@booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "text-decoration-none" %>
+        </div>
+      <div class="row justify-content-center">
+        <div class="col-md-8 mt-3">
           <h1 class="title"><%= @booking.cottage.name %></h1>
             <div class="row justify-content-center mb-3">
               <% if @booking.cottage.photos.attached? %>
