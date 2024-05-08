@@ -44,25 +44,28 @@
 
     <h2 class="title">Your history</h2>
 
-
     <div class="history">
+      <% reservations_non_attente = @bookings.reject { |booking| booking.status == "Pending" } %>
 
-      <% @bookings.each do |booking| %>
-          <% if booking.status != "Pending" %>
-            <div class="card card-history">
+      <% if reservations_non_attente.any? %>
+        <% reservations_non_attente.each do |booking| %>
+          <div class="card card-history">
+            <%= cl_image_tag booking.cottage.photos.first.key, crop: :fill, class: "img" %>
+            <h2 class="title-cottage"><%= booking.cottage.name %></h2>
 
-              <%= cl_image_tag booking.cottage.photos.first.key, crop: :fill, class: "img" %>
-              <h2 class="title-cottage"><%= booking.cottage.name %></h2>
+            <% if booking.status == "refused" %>
+              <p class="text-danger">Statut : <%= booking.status.capitalize %></p>
+            <% else %>
+              <p class="text-success">Statut : <%= booking.status.capitalize %></p>
+            <% end %>
+          </div>
+        <% end %>
 
-              <% if booking.status == "refused" %>
-                <p class="text-danger">status : <%= booking.status %></p>
-              <% else %>
-                <p class="text-success">status : <%= booking.status %></p>
-              <% end %>
-
-            </div>
-          <% end %>
+        <% else %>
+          <p class="w-100">No history yet...</p>
       <% end %>
+
     </div>
+
   </div>
 </div>
