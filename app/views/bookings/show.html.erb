@@ -54,7 +54,15 @@
               <div class="info">
                 <div class="description mt-2">
                   <h5 class="card-title"><strong>Informations :</strong></h5>
-                  <p class="text-description">Status : <%= @booking.status %></p>
+                  <% if @booking.status != "Pending" %>
+                    <% if @booking.status == "refused" %>
+                    <p class="text-danger">Status : <%= @booking.status %></p>
+                    <% else %>
+                    <p class="text-success">Status : <%= @booking.status %></p>
+                    <% end %>
+                  <% else %>
+                    <p class="text-danger">Status : <%= @booking.status %></p>
+                  <% end %>
                   <p class="text-description">Start Date : <%= @booking.start_date %></p>
                   <p class="text-description">End Date: <%= @booking.end_date %></p>
                 </div>
