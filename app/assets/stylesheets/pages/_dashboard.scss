@@ -70,15 +70,6 @@ h1{
   position: relative;
 }
 
-.status::after {
-  content: "\2022";
-  position: absolute;
-  color: red;
-  font-size: 30px;
-  top: -9px;
-  left: 100px;
-  }
-
 li {
     list-style-type: none;
   }
