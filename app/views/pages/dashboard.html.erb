@@ -29,8 +29,8 @@
               <h2 class="title-cottage"><%= booking.cottage.name %></h2>
               <p class="address"><%= booking.cottage.address %></p>
               <div class="booking-info justify-content-center">
-                <p class="text-status">Start: <%= booking.start_date %></p>
-                <p class="text-status">End: <%= booking.end_date %></p>
+                <p class="text-status">Start: <%= booking.start_date.strftime("%d.%m.%Y") %></p>
+                <p class="text-status">End: <%= booking.end_date.strftime("%d.%m.%Y") %></p>
               </div>
               <div class="d-flex justify-content-between">
                 <%= link_to "Accept", accept_booking_path(booking), class: 'accept-button' %>
