@@ -4,58 +4,61 @@
   font-size: 14px;
   color: $current-nature;
   height: 100%;
+  background-color: white;
+  opacity: 75%;
 
 }
-
 
 .price{
   color: black;
 }
 
-.btn-delete{
-  background: #FF4742;
-  border: #FF4742;
+.btn-d{
+  background: white;
+  border: 1px solid #FF4742;
   text-align: center;
   border-radius: 6px;
   box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
   cursor: pointer;
 
     a {
-  color: white;
+  color: #FF4742;
  }
 
 }
 
-.btn-delete:hover{
-background-color: white;
+.btn-d:hover{
+background-color: #FF4742;
  a{
-  color: #FF4742;
+  color: white;
 }
 }
 
 
-.btn-edit{
-  background-color: $current-nature;
+.btn-e{
+  background-color: white;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
   text-align: center;
   border-radius: 6px;
+  border: 1px solid $current-nature;
   box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
   cursor: pointer;
 
 
   a{
-    color: white;
+    color: $current-nature;
 
   }
 }
 
-.btn-edit:hover{
-  background-color: white;
+.btn-e:hover{
+  background-color: $current-nature;
 
   a{
-    color: $current-nature;
+    color: white;
   }
 }
+
 
 .img_caroussel{
   width: 100%;
