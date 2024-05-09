@@ -56,13 +56,17 @@
 
 
                       <% if @cottage.user == current_user %>
-                        <div class="col m-3 btn-edit">
-                          <%= link_to "Edit", edit_cottage_path(@cottage)  %>
+                        <div class="row justify-content-center">
+                          <button class="col-3 m-3 btn btn-e" type="button"><%= link_to "Edit", edit_cottage_path(@cottage)%></button>
+                          <button class="col-3 m-3 btn btn-d" type="button"> <%= link_to link_to "Delete", cottage_path(@cottage), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%></button>
                         </div>
-                        <div class="col m-3 btn-delete">
-                          <%= link_to link_to "Delete", cottage_path(@cottage), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-                        </div>
-                      <% end %>
+                       <% end %>
+
+
+
+
+
+
                   </div>
                 </div>
           </div>
