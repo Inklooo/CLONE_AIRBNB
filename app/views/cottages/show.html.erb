@@ -3,10 +3,10 @@
 
       <div class="banner">
         <div class="row justify-content-center">
-          <div class="row md-8 mt-3">
+          <div class="row">
             <h1 class="title"><%= @cottage.name %></h1>
               <% if @cottage.photos.attached? %>
-                <div id="carouselExample" class="col-md-6 carousel slide">
+                <div id="carouselExample" class="col carousel slide">
                   <div class="carousel-inner">
                     <% i = 1%>
                     <% @cottage.photos.each do |photo| %>
@@ -61,12 +61,6 @@
                           <button class="col-3 m-3 btn btn-d" type="button"> <%= link_to link_to "Delete", cottage_path(@cottage), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%></button>
                         </div>
                        <% end %>
-
-
-
-
-
-
                   </div>
                 </div>
           </div>

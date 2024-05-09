@@ -5,7 +5,8 @@
   color: $current-nature;
   height: 100%;
   background-color: white;
-  opacity: 75%;
+  opacity: 85%;
+  border-radius: 5px;
 
 }
 
@@ -64,6 +65,7 @@ background-color: #FF4742;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 5px;
 }
 
 .button-booking{
@@ -72,4 +74,8 @@ background-color: #FF4742;
 
 .description{
   margin-bottom: 20px;
+}
+
+.carousel{
+  padding-left: 0;
 }
