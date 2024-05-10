@@ -26,9 +26,10 @@ h1{
   text-align: center;
   opacity: 85%;
   border-radius: 5px;
+  background: rgba(255, 255, 255, 0.5);
 
   &:hover {
-
+    background: white;
     transition: 500ms linear;
   }
 }
@@ -114,4 +115,9 @@ li {
 
 .booking-info-history {
   height: 20px;
+}
+
+.display-column {
+  display: flex;
+  justify-content: space-between;
 }
