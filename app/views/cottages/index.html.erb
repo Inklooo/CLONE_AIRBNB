@@ -1,36 +1,40 @@
 
 <div class="index">
-  <div class="cards">
-    <% @cottages.each do |cottage| %>
-      <%= link_to cottage_path(cottage) do  %>
-        <div class="card-trip" >
-            <% if cottage.photos.attached? %>
-                <%= cl_image_tag cottage.photos.first.key, crop: :fill %>
-            <% else %>
-              <%= image_tag "chalet.jpeg" %>
-            <% end %>
-            <div class="card-trip-infos">
-              <div>
-                <h2><%= cottage.name %></h2>
-                <p class="description-cottage"><%= cottage.description %></p>
-              </div>
-              <div class="price-container">
-                <h2 class="card-trip-pricing"><%= sprintf("%0.02f", cottage.price) %>CAD</h2>
-              </div>
-              <% if cottage.user.photo.attached? %>
-                <%= cl_image_tag cottage.user.photo.key, crop: :fill, alt: "avatar-bordered", class: "card-trip-user avatar-bordered" %>
+  <% if @cottages.length != 0 %>
+    <div class="cards">
+      <% @cottages.each do |cottage| %>
+        <%= link_to cottage_path(cottage) do  %>
+          <div class="card-trip" >
+              <% if cottage.photos.attached? %>
+                  <%= cl_image_tag cottage.photos.first.key, crop: :fill %>
               <% else %>
-               <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+                <%= image_tag "chalet.jpeg" %>
               <% end %>
-            </div>
-        </div>
+              <div class="card-trip-infos">
+                <div>
+                  <h2><%= cottage.name %></h2>
+                  <p class="description-cottage"><%= cottage.description %></p>
+                </div>
+                <div class="price-container">
+                  <h2 class="card-trip-pricing"><%= sprintf("%0.02f", cottage.price) %>CAD</h2>
+                </div>
+                <% if cottage.user.photo.attached? %>
+                  <%= cl_image_tag cottage.user.photo.key, crop: :fill, alt: "avatar-bordered", class: "card-trip-user avatar-bordered" %>
+                <% else %>
+                <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+                <% end %>
+              </div>
+          </div>
+        <% end %>
       <% end %>
-    <% end %>
-  </div>
-  <div
-    class="map"
-    data-controller="map"
-    data-map-markers-value="<%= @markers.to_json %>"
-    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-  </div>
+    </div>
+    <div
+      class="map"
+      data-controller="map"
+      data-map-markers-value="<%= @markers.to_json %>"
+      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+  <% else %>
+  <p>No results...<p>
+  <% end %>
 </div>

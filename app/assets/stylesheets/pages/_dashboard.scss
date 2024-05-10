@@ -11,12 +11,6 @@
 .title{
   margin-top: 0px;
   font-size: 25px;
-  font-family: $app-title-font;
-}
-
-h1{
-  font-family: $app-title-font;
-
 }
 
 .card{
@@ -28,7 +22,6 @@ h1{
   border-radius: 5px;
 
   &:hover {
-
     transition: 500ms linear;
   }
 }
@@ -69,15 +62,6 @@ h1{
   text-align: center;
   position: relative;
 }
-
-.status::after {
-  content: "\2022";
-  position: absolute;
-  color: red;
-  font-size: 30px;
-  top: -9px;
-  left: 100px;
-  }
 
 li {
     list-style-type: none;

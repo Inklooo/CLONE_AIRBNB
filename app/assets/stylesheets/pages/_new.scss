@@ -3,11 +3,24 @@
 .title-new {
   font-family: $app-title-font;
   font-weight: 700;
-  color: $title-yellow;
+  color: white;
   margin-top: 20px !important;
 }
 
-#new_booking{
+#new_booking {
   margin-left: 27px;
   width: 35%;
+}
+
+.new-container {
+  margin: 0 auto;
+}
+
+#new_cottage {
+  width: 50%;
+}
+
+.formulaire {
+  display: flex;
+  justify-content: center;
 }
