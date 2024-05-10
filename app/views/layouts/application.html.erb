@@ -15,7 +15,7 @@
   <body class="<%="body-background" unless params[:controller] == "pages" && params[:action] == "home" %>">
 
     <div class="navbar">
-        <h1><%= link_to "Cottages Rental", root_path%></h1>
+        <h1><%= link_to image_tag("logoapp.png", alt: "Logo", class: "logoapp"), root_path%></h1>
       <div class="navbar-icons">
         <%= link_to "My reservations", dashboard_path %>
         <%= link_to "Publish an offer", new_cottage_path%>
