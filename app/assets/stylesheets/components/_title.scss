@@ -5,7 +5,7 @@
   margin-top: 50px;
   font-size: 36px;
   background: $current-nature;
-  color: #fffb99;
+  color: white !important;
   padding: 20px;
   border-radius: 5px;
   }
@@ -13,15 +13,15 @@
   text-align: center;
   margin-top: 50px;
   font-size: 70px;
-  color: #fbfbfb;
+  color: #ffffff;
   padding: 20px;
   border-radius: 5px;
   position: absolute;
   top: 30%;
   width: 100%;
   text-shadow:
-  -1px -1px 0 #000,
-   1px -1px 0 #000,
-  -1px  1px 0 #000,
-   1px  1px 0 #000;
+   2px  2px 0 #000000;
+    h2 {
+    font-size: 50px;
+   }
 }
