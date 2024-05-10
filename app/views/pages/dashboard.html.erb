@@ -3,9 +3,9 @@
     <h1 class="text-center mt-4 mb-4">Dashboard</h1>
   </div>
 
-  <div class="row dashboard-container">
+  <div class="row dashboard-container mt-2">
 
-    <div class="col-4 m-5 booking">
+      <div class="booking col-5">
       <h2 class="title">Your bookings:</h2>
       <div class="booking-list">
         <% @user_bookings.reverse_each do |booking| %>
@@ -14,12 +14,12 @@
             <h3 class="title-cottage"><%= link_to booking.cottage.name, booking %></h3>
             <% if booking.status != "Pending" %>
               <% if booking.status == "refused" %>
-              <p class="text-danger col text-description"><strong>Status : <%= booking.status %></p>
+              <p class="text-danger col text-description">Status : <%= booking.status %></p>
               <% else %>
-              <p class="text-success col text-description"><strong>Status : <%= booking.status %></p>
+              <p class="text-success col text-description">Status : <%= booking.status %></p>
               <% end %>
             <% else %>
-              <p class="text-warning col text-description"><strong>Status : <%= booking.status %></p>
+              <p class="text-warning col text-description">Status : <%= booking.status %></p>
             <% end %>
           </ul>
         <% end %>
@@ -27,7 +27,7 @@
     </div>
 
 
-    <div class="col-4 m-5 current-request">
+    <div class="current-request col-5">
       <h2 class="title">Your current requests:</h2>
       <% @bookings.reverse_each do |booking| %>
 
